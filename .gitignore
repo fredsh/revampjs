@@ -1,0 +1,14 @@
+.DS_STORE
+.eslintcache
+*~
+
+/node_modules
+
+coverage
+lerna-debug.log
+npm-debug.log
+npm-debug.log*
+yarn-error.log*
+
+index.sublime-workspace
+

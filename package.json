@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/fredsh/revampjs/issues"
   },
-  "homepage": "https://github.com/fredsh/revampjs#readme"
+  "homepage": "https://github.com/fredsh/revampjs#readme",
+  "devDependencies": {
+    "jest": "^22.0.4"
+  }
 }
