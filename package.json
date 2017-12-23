@@ -1,0 +1,23 @@
+{
+  "name": "revampjs",
+  "version": "0.1.1",
+  "description": "Inspired by ES6 deconstruct. A safe extract of js object properties into a new object",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredsh/revampjs.git"
+  },
+  "keywords": [
+    "extract",
+    "deconstruct"
+  ],
+  "author": "fredsh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fredsh/revampjs/issues"
+  },
+  "homepage": "https://github.com/fredsh/revampjs#readme"
+}
