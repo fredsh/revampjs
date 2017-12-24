@@ -5,6 +5,7 @@ I am still working on the ergonomics of this helper library so breaking changes 
 Please feel free to open an issue if you have any suggestion.
 
 ## Plan
-[] Finaliwe syntax of parameter for values extraction
-[] Add test cases to demo the usage
-[] Think of an alternative to the {...rest} from ES6
+[ ] Finaliwe syntax of parameter for values extraction
+[ ] Add test cases to demo the usage
+[ ] Think of an alternative to the {...rest} from ES6
+[ ] Add travis conf
