@@ -1,5 +1,5 @@
 # revampjs
-[![npm version](https://badge.fury.io/js/revampjs.svg)](https://badge.fury.io/js/revampjs)
+[![Build Status](https://travis-ci.org/fredsh/revampjs.svg?branch=master)](https://travis-ci.org/fredsh/revampjs) [![npm version](https://badge.fury.io/js/revampjs.svg)](https://badge.fury.io/js/revampjs)
 
 Inspired by ES6 deconstruct. A safe extract of js object properties into a new object
 
