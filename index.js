@@ -29,7 +29,6 @@ const revamp = (function() {
             {[newKey]: (
               valuePath.split('.').reduce(
                 function(nestedObj, k) {
-                  console.log(nestedObj, k)
                   return (
                     nestedObj && typeof(nestedObj) !== 'string' && k in nestedObj
                     ? nestedObj[k]
