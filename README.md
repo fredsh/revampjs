@@ -1,4 +1,6 @@
 # revampjs
+[![npm version](https://badge.fury.io/js/revampjs.svg)](https://badge.fury.io/js/revampjs)
+
 Inspired by ES6 deconstruct. A safe extract of js object properties into a new object
 
 I am still working on the ergonomics of this helper library so breaking changes are to be expected at the moment.
