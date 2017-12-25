@@ -3,7 +3,25 @@ const revamp = (function() {
     'use strict';
 
 
+    function pick(src, pickArray) {
+      if (!pickArray || !src) {
+        return {}
+      }
+      return Object.values(pickArray).reduce(
+        function(res, picker) {
+          return Object.assign(
+            res,
+            {[picker]: src[picker]}
+          )
+        },
+        {}
+      );
+    }
+
     function extract(src, shape) {
+      if (!shape || !src) {
+        return {}
+      }
       return Object.entries(shape).reduce(
         function(res, [newKey, valuePath]) {
           return Object.assign(
@@ -11,8 +29,9 @@ const revamp = (function() {
             {[newKey]: (
               valuePath.split('.').reduce(
                 function(nestedObj, k) {
+                  console.log(nestedObj, k)
                   return (
-                    nestedObj && k in nestedObj
+                    nestedObj && typeof(nestedObj) !== 'string' && k in nestedObj
                     ? nestedObj[k]
                     : undefined
                   )
@@ -27,11 +46,10 @@ const revamp = (function() {
     }
 
     return {
-      extract: extract
+      extract: extract,
+      pick: pick
     }
 
 }());
-
-console.log(revamp)
 
 module.exports = revamp;
