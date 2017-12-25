@@ -1,6 +1,6 @@
 {
   "name": "revampjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Inspired by ES6 deconstruct. A safe extract of js object properties into a new object",
   "main": "index.js",
   "scripts": {
