@@ -20,12 +20,17 @@ So I ended up writing helper functions to do the result object wrapping. As it w
 - [x] Safely extract any value(s) (nested or not) from a source object
 - [x] Rename extracted properties in destination object
 - [x] Ligh-version for simply picking properties
-- [ ] Support of an equivalent of {...rest} from ES6 (maybe)
+
+- [x] Travis CI to run test suite
+
+## Changelog (0.2.0)
+- [x] Support for ImmutableJS objects
 
 ## Plan
 - [ ] Finaliwe syntax of parameter for values extraction
-- [x] Add test cases to demo the usage
-- [ ] Add travis conf
+- [ ] Add test cases to demo the usage with ImmutableJS
+- [ ] Support of an equivalent of {...rest} from ES6 (maybe)
+- [ ] Add warning when attempting to access a palsy key
 
 ## Getting started
 
@@ -67,3 +72,13 @@ const myNewObjectRevamped = revamp.extract(sourceObject, {
   newKeyForNested: 'e.f'
 });
 ```
+
+### using with ImmutableJS
+Both functions `pick` and `extract` accept a third optional parameter `isSrcImmutable`.
+If you pass `true` to this value, then the functions will consider the `src` parameter as an ImmutableJS object.
+
+Please note that:
+- this feature has just been added and test coverage has not been updated yet.
+- this library itself does not use ImmutableJS. Therefore the returned object is never an ImmutableJS object (though each extracted value is).
+- the `extract` function assumes that the whole src object and its properties are immutable.
+

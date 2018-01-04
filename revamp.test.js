@@ -1,4 +1,5 @@
 const revamp = require('./index');
+const fromJS = require('immutable').fromJS
 
 const srcSample1 = {
   a: 42,
@@ -26,6 +27,16 @@ describe('extract falsy values testing', () => {
     const res = revamp.extract(srcSample1, {
       nonExisting: 'z'
     })
+    expect(res).toEqual({nonExisting: undefined})
+  });
+
+  test('extract key in non-object source (string)', () => {
+    const res = revamp.extract(srcSample1, { nonExisting: 'b.c'})
+    expect(res).toEqual({nonExisting: undefined})
+  });
+
+  test('extract key in non-object source (value)', () => {
+    const res = revamp.extract(srcSample1, { nonExisting: 'a.b'})
     expect(res).toEqual({nonExisting: undefined})
   });
 

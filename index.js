@@ -3,7 +3,7 @@ const revamp = (function() {
     'use strict';
 
 
-    function pick(src, pickArray) {
+    function pick(src, pickArray, isSrcImmutable=false) {
       if (!pickArray || !src) {
         return {}
       }
@@ -11,14 +11,14 @@ const revamp = (function() {
         function(res, picker) {
           return Object.assign(
             res,
-            {[picker]: src[picker]}
+            {[picker]: (isSrcImmutable ? src.get(picker) : src[picker])}
           )
         },
         {}
       );
     }
 
-    function extract(src, shape) {
+    function extract(src, shape, isSrcImmutable=false) {
       if (!shape || !src) {
         return {}
       }
@@ -29,8 +29,14 @@ const revamp = (function() {
             {[newKey]: (
               valuePath.split('.').reduce(
                 function(nestedObj, k) {
+                  if (nestedObj === undefined) {
+                    return undefined
+                  }
+                  if (isSrcImmutable) {
+                    return nestedObj.get(k)
+                  }
                   return (
-                    nestedObj && typeof(nestedObj) !== 'string' && k in nestedObj
+                    typeof(nestedObj) === 'object' && k in nestedObj
                     ? nestedObj[k]
                     : undefined
                   )
